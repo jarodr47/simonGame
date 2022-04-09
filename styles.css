@@ -48,6 +48,7 @@ h2 {
   width: 200px;
   border-radius: 5%;
   background-color: darkgrey;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .game-over {
