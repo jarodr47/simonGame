@@ -10,9 +10,8 @@ function nextSequence () {
     let randomChosenColor = buttons[randomNumber].id;
     gamePattern.push(randomChosenColor);
     let selectedBtn = $("#"+gamePattern[gamePattern.length-1]);
-    let sound = new Audio(`sounds/${gamePattern[gamePattern.length-1]}.mp3`)
-    $(selectedBtn).fadeOut(50).fadeIn();
-    sound.play();
+    playSound(gamePattern[gamePattern.length-1]);
+    $(selectedBtn).fadeOut(50).fadeIn();    
     level++;
     $("#level-title").html(`Level ${level}`);
 }
@@ -43,8 +42,6 @@ function animatePress(currentColor) {
 }
 
 function checkNewAnswer (currentLevel) {
-    console.log(userClickedPattern);
-    console.log(gamePattern);
     if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
         if (userClickedPattern.length === gamePattern.length){
             setTimeout(function () {
