@@ -26,6 +26,17 @@ $(document).keypress(function() {
     }
 });
 
+$(".play").click(function (){
+    if (!started){
+        $("#level-title").html("Level 1");
+        nextSequence();
+        started = true;
+        $(".play").prop('disabled', true);
+    } else {
+        return;
+    }
+})
+
 $(".btn").click(function (event){
     let userChosenColor = event.target.id;
     userClickedPattern.push(userChosenColor);
@@ -68,4 +79,6 @@ function startOver () {
     level = 0;
     gamePattern = [];
     started = false;
+    $(".play").html("Restart");
+    $(".play").prop('disabled', false);
 }

@@ -43,6 +43,13 @@ h2 {
   border-radius: 20%;
 }
 
+.play {
+  height: 70px;
+  width: 200px;
+  border-radius: 5%;
+  background-color: darkgrey;
+}
+
 .game-over {
   background-color: red;
   opacity: 0.8;
